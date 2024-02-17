@@ -27,7 +27,7 @@ auth = tweepy.OAuth1UserHandler(
 )
 api = tweepy.API(auth)
 
-#tweet number facts and cat facts
+#tweet number facts
 
 querystring = {"fragment":"true","notfound":"floor","json":"true"}
 
