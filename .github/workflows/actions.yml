@@ -2,7 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '30 5-15 * * *' # Every hour between 11am to 8pm
+    - cron: '30 5-15 * * *' # Every 30 minutes past hour between 11am to 8pm
+    - cron: '45 5-15 * * *' # Every 45 minutes past hour between 11am to 8pm
 
 jobs:
   build:
@@ -22,8 +23,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute py script # run main.py
-        run: python main.py
+      - name: execute py script # run A.py
+        if: contains(github.event.schedule, '30 5-15 * * *')
+        run: python A.py
+
+      - name: execute py script # run B.py
+        if: contains(github.event.schedule, '45 5-15 * * *')
+        run: python B.py
           
       - name: commit files
         run: |

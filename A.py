@@ -2,7 +2,15 @@ import tweepy
 import requests
 import json
 import random
-from PIL import Image 
+from PIL import Image
+
+def listtostring(s):
+ 
+    # initialize an empty string
+    str1 = "\n"
+ 
+    # return string
+    return (str1.join(s))
 
 # authenticate twitter account
 
@@ -21,9 +29,6 @@ api = tweepy.API(auth)
 
 #tweet number facts and cat facts
 
-A = []
-B = []
-
 querystring = {"fragment":"true","notfound":"floor","json":"true"}
 
 headers = {
@@ -38,32 +43,23 @@ while i <= 0:
     url = f"https://numbersapi.p.rapidapi.com/{num}/trivia"
     response = requests.get(url, headers=headers, params=querystring)
     api_response = json.loads(response.text)
-    
-    fact = requests.get("https://catfact.ninja/fact?max_length=280").json()
-    
-    img = requests.get("https://api.sefinek.net/api/v2/random/animal/cat").json()
-    data = requests.get(img['message']).content
-    f = open('media.jpg','wb') 
-    f.write(data)
-    f.close()
-    
-    if api_response['number'] not in A:
+
+    with open('A.txt','r+') as file1:
         
-        A.append(api_response['number'])
-        txt1 = f"number : {num}\n{api_response['text']}\n\n#number_facts"
+        file1r = file1.read()
+        A = file1r.split("\n")
         
-        client.create_tweet(text=txt1)
+        if api_response['number'] not in A:
+            
+            A.append(api_response['number'])
+            A = listtostring(A)
+            file1.truncate(0)
+            file1.seek(0)
+            file1.write(A)
+            
+            txt1 = f"number : {num}\n{api_response['text']}\n\n#number_facts"
+            
+            client.create_tweet(text=txt1)
         
-    if fact['fact'] not in B:
-        
-        B.append(fact['fact'])
-        txt2 = f"{fact['fact']}\n\n#cat_facts"
-        
-        media = api.media_upload(filename='media.jpg')
-        media_id = media.media_id
-        
-        client.create_tweet(text=txt2, media_ids=[media_id])
-        
-        i = i + 1
-    else:
-        i = i
+        else:
+            i = i
