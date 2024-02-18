@@ -47,16 +47,18 @@ while i == 0:
         
         if api_response['text'] not in A:
             
-            A.append(api_response['text'])
-            num = ('{:,}'.format(num))		
+            A.append(api_response['text'])		
             A = listtostring(A)
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
+            num = ('{:,}'.format(num))
             
             txt1 = f"number : {api_response['number']}\n\n{api_response['text']}.\n\n#number_facts"
             
             client.create_tweet(text=txt1)
-        
+            
+            i = 1
+
         else:
             i = i
