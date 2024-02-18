@@ -4,10 +4,6 @@ import json
 import random
 import os
 
-def listtostring(s):
-    str1 = "\n"
-    return (str1.join(s))
-
 # authenticate twitter account
 
 client = tweepy.Client(
@@ -17,12 +13,16 @@ client = tweepy.Client(
     access_token_secret=os.getenv("ACCESS_TOKEN_SECRET")
 )
 
+def listtostring(s):
+    str1 = "\n"
+    return (str1.join(s))
+
 #tweet number facts
 
 querystring = {"fragment":"true","notfound":"floor","json":"true"}
 
 headers = {
-	"X-RapidAPI-Key": "RAPID_API_KEY",
+	"X-RapidAPI-Key": os.getenv("RAPID_API_KEY"),
 	"X-RapidAPI-Host": "numbersapi.p.rapidapi.com"
 }
 
@@ -41,7 +41,7 @@ while i == 0:
         
         if api_response.get('text','none') not in A:
             
-            A.append(api_response.get('text','none'))		
+            A.append(api_response.get('text','none'))
             A = listtostring(A)
             file1.truncate(0)
             file1.seek(0)
@@ -49,10 +49,9 @@ while i == 0:
             num = format(int(api_response['number']), ',d')
             
             txt1 = f"number : {num}\n\n{api_response.get('text','none')}.\n\n#number_facts"
-            
+
             client.create_tweet(text=txt1)
             
             i = 1
-
         else:
             i = i
