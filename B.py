@@ -24,7 +24,7 @@ api = tweepy.API(auth)
 #tweet cat facts
 
 i=0
-while i <= 0:
+while i == 0:
     
     fact = requests.get("https://catfact.ninja/fact?max_length=280").json()
     img = requests.get("https://api.sefinek.net/api/v2/random/animal/cat").json()
