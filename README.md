@@ -1,5 +1,7 @@
 # An automated Twitter bot using Python and GitHub actions.
 
+[![create tweet](https://github.com/jb1812/actions-tweetbot/actions/workflows/actions.yml/badge.svg)](https://github.com/jb1812/actions-tweetbot/actions/workflows/actions.yml)
+
 This repository uses GitHub actions to implement Python scripts that tweet random number facts and random cat facts with cat images. The tweets are done from [@Facts_Figures1](https://x.com/Sci_Nuggets?t=YYwgI7SnRbPlEwcQpJbNOw&s=09) account every hour, at a delay of 15 minutes, between 11:00- 21:00 IST.
 
 - Install all third-party packages from `requirements.txt`
