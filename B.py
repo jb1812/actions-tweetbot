@@ -46,7 +46,7 @@ while i == 0:
             file2.seek(0)
             file2.write(B)
             
-            txt2 = f"{fact['fact']}\n\n#cat_facts"
+            txt2 = f"{fact['fact']}\n\n#Cat_Facts #CatsOfTwitter"
             
             media = api.media_upload(filename='media.jpg')
             media_id = media.media_id
