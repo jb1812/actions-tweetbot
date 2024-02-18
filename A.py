@@ -5,11 +5,7 @@ import random
 import os
 
 def listtostring(s):
- 
-    # initialize an empty string
     str1 = "\n"
- 
-    # return string
     return (str1.join(s))
 
 # authenticate twitter account
