@@ -52,7 +52,7 @@ while i == 0:
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
-	    num = format(int(api_response['number']), ',d')
+	        num = format(int(api_response['number']), ',d')
             
             txt1 = f"number : {num}\n\n{api_response.get('text','none')}.\n\n#number_facts"
             
