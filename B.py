@@ -25,14 +25,7 @@ auth = tweepy.OAuth1UserHandler(
 )
 api = tweepy.API(auth)
 
-#tweet number facts and cat facts
-
-querystring = {"fragment":"true","notfound":"floor","json":"true"}
-
-headers = {
-	"X-RapidAPI-Key": "2ae9382820mshbeb98204cef46bdp1b5769jsn85bde535876e",
-	"X-RapidAPI-Host": "numbersapi.p.rapidapi.com"
-}
+#tweet cat facts
 
 i=0
 while i <= 0:
