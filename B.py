@@ -52,7 +52,7 @@ while i == 0:
             media_id = media.media_id
             
             client.create_tweet(text=txt2, media_ids=[media_id])
-            i = i + 1
+            i = 1
             
         else:
             i = i
