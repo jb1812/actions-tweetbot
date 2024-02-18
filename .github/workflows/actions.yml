@@ -1,3 +1,5 @@
+name: create tweet
+
 on:
   schedule:
     - cron: '30 5-15 * * *' # Every 30 minutes past hour between 11am to 8pm
