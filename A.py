@@ -45,16 +45,16 @@ while i == 0:
         file1r = file1.read()
         A = file1r.split("\n")
         
-        if api_response.get('text',none) not in A:
+        if api_response.get('text','none') not in A:
             
-            A.append(api_response['text'])		
+            A.append(api_response.get('text','none'))		
             A = listtostring(A)
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
 	    num = format(int(api_response['number']), ',d')
             
-            txt1 = f"number : {num}\n\n{api_response['text']}.\n\n#number_facts"
+            txt1 = f"number : {num}\n\n{api_response.get('text','none')}.\n\n#number_facts"
             
             client.create_tweet(text=txt1)
             
