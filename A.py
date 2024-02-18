@@ -32,14 +32,14 @@ api = tweepy.API(auth)
 querystring = {"fragment":"true","notfound":"floor","json":"true"}
 
 headers = {
-	"X-RapidAPI-Key": "2ae9382820mshbeb98204cef46bdp1b5769jsn85bde535876e",
+	"X-RapidAPI-Key": "RAPID_API_KEY",
 	"X-RapidAPI-Host": "numbersapi.p.rapidapi.com"
 }
 
 i=0
 while i <= 0:
     
-    num = random.randint(0,200000)
+    num = random.randint(0,50000000)
     url = f"https://numbersapi.p.rapidapi.com/{num}/trivia"
     response = requests.get(url, headers=headers, params=querystring)
     api_response = json.loads(response.text)
