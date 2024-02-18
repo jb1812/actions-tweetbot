@@ -33,22 +33,23 @@ while i == 0:
     url = f"https://numbersapi.p.rapidapi.com/{num}/trivia"
     response = requests.get(url, headers=headers, params=querystring)
     api_response = json.loads(response.text)
+    response_list = list(api_response.values())
 
     with open('A.txt','r+') as file1:
         
         file1r = file1.read()
         A = file1r.split("\n")
         
-        if api_response['text'] not in A:
+        if response_list[0] not in A:
             
-            A.append(api_response['text'])
+            A.append(response_list[0])
             A = listtostring(A)
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
-            num = format(int(api_response['number']), ',d')
+            num = format(int(response_list[1]), ',d')
             
-            txt1 = f"number : {num}\n\n{api_response.get['text']}.\n\n#number_facts"
+            txt1 = f"number : {num}\n\n{response_list[0]}.\n\n#number_facts"
 
             client.create_tweet(text=txt1)
             
