@@ -45,7 +45,7 @@ while i == 0:
         file1r = file1.read()
         A = file1r.split("\n")
         
-        if api_response['text'] not in A:
+        if api_response.get('text',none) not in A:
             
             A.append(api_response['text'])		
             A = listtostring(A)
