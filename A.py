@@ -54,7 +54,7 @@ while i == 0:
             file1.write(A)
             num = ('{:,}'.format(num))
             
-            txt1 = f"number : {api_response['number']}\n\n{api_response['text']}.\n\n#number_facts"
+            txt1 = f"number : {num}\n\n{api_response['text']}.\n\n#number_facts"
             
             client.create_tweet(text=txt1)
             
