@@ -1,8 +1,6 @@
 import tweepy
 import requests
-import json
-import random
-from PIL import Image
+import os
 
 def listtostring(s):
  
@@ -15,15 +13,15 @@ def listtostring(s):
 # authenticate twitter account
 
 client = tweepy.Client(
-    consumer_key="0nOpHhG2N2w9J9ldXK70fJpb2",
-    consumer_secret="qXBvpPMR6wpS9Y3rqJK4D8ThvQV4pGE4iQYajz7ZNPmM5QWtLP",
-    access_token="1688859028158566400-ua5L2IUnD1E66ev2S9WFesL2k2TT98",
-    access_token_secret="QqH2Wc7rTf7UPiEE6Tfv7lrFzs5tvFbhQ03oZlqJm9t3e"
+    consumer_key=os.getenv("API_KEY"),
+    consumer_secret=os.getenv("API_KEY_SECRET"),
+    access_token=os.getenv("ACCESS_TOKEN"),
+    access_token_secret=os.getenv("ACCESS_TOKEN_SECRET")
 )
 
 auth = tweepy.OAuth1UserHandler(
-   "0nOpHhG2N2w9J9ldXK70fJpb2", "qXBvpPMR6wpS9Y3rqJK4D8ThvQV4pGE4iQYajz7ZNPmM5QWtLP",
-   "1688859028158566400-ua5L2IUnD1E66ev2S9WFesL2k2TT98", "QqH2Wc7rTf7UPiEE6Tfv7lrFzs5tvFbhQ03oZlqJm9t3e"
+   os.getenv("API_KEY"), os.getenv("API_KEY_SECRET"),
+   os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET")
 )
 api = tweepy.API(auth)
 
