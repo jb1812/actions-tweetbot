@@ -17,12 +17,6 @@ client = tweepy.Client(
     access_token_secret=os.getenv("ACCESS_TOKEN_SECRET")
 )
 
-auth = tweepy.OAuth1UserHandler(
-   os.getenv("API_KEY"), os.getenv("API_KEY_SECRET"),
-   os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET")
-)
-api = tweepy.API(auth)
-
 #tweet number facts
 
 querystring = {"fragment":"true","notfound":"floor","json":"true"}
@@ -52,7 +46,7 @@ while i == 0:
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
-	        num = format(int(api_response['number']), ',d')
+            num = format(int(api_response['number']), ',d')
             
             txt1 = f"number : {num}\n\n{api_response.get('text','none')}.\n\n#number_facts"
             
