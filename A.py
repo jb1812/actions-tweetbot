@@ -47,10 +47,11 @@ while i == 0:
             file1.truncate(0)
             file1.seek(0)
             file1.write(A)
-            num = format(int(response_list[1]), ',d')
             
-            txtt = f"number : {num}\n\n{response_list[0]}.\n\n#Number_Facts #Maths #Fun_Fact"
-			txt1 = txtt[0].upper + txtt[1:]
+            num = format(int(response_list[1]), ',d')
+            cap = response_list[0][0].upper() + response_list[0][1:]
+            txt1 = f"number : {num}\n\n{cap}.\n\n#Number_Facts #Maths #Fun_Fact"
+
             client.create_tweet(text=txt1)
             
             i = 1
