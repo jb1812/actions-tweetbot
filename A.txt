@@ -1,3 +1,4 @@
 
 the number of different inhabited planets in the the Galactic Empire
 the number of different colors that can be generated using the hex code system in HTML
+the number of turkeys Americans eat at Thanksgiving annually
