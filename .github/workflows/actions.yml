@@ -2,8 +2,8 @@ name: create tweet
 
 on:
   schedule:
-    - cron: '30 3-12 * * *' # Every 30 minutes past hour between 9am to 6pm
-    - cron: '45 3-12 * * *' # Every 45 minutes past hour between 9am to 6pm
+    - cron: '30 0-22 * * *' # Every 30 minutes past hour between 6am to 4am(+1)
+    - cron: '45 0-22 * * *' # Every 45 minutes past hour between 6am to 4am(+1)
 
 jobs:
   build:
@@ -23,24 +23,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute py script # run A.py
-        if: contains(github.event.schedule, '30 3-12 * * *')
+      - name: execute py script # run numbers.py
+        if: contains(github.event.schedule, '30 0-22 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY}}
-        run: python A.py
+        run: python numbers.py
 
-      - name: execute py script # run B.py
-        if: contains(github.event.schedule, '45 3-12 * * *')
+      - name: execute py script # run cats.py
+        if: contains(github.event.schedule, '45 0-22 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
-        run: python B.py
+        run: python cats.py
           
       - name: commit files
         run: |
