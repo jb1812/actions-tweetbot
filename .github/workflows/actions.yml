@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute py script # run A.py
-        if: contains(github.event.schedule, '30 5-15 * * *')
+        if: contains(github.event.schedule, '30 3-12 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
@@ -33,7 +33,7 @@ jobs:
         run: python A.py
 
       - name: execute py script # run B.py
-        if: contains(github.event.schedule, '45 5-15 * * *')
+        if: contains(github.event.schedule, '45 3-12 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
