@@ -13,3 +13,4 @@ the pounds of bacon that Burger King restaurants prepare each year for their bre
 the number of couples in the United States that live together but are not married
 the number of people buried in Père Lachaise Cemetery, the most visited cemetary in the world, opened in 1804
 the number of geographic features named by the NIMA GEOnet Names Server
+the number of entries in the freedb database of CD track listings as of June 2005
