@@ -9,3 +9,5 @@ the number of turkeys Americans eat at Thanksgiving annually
 the number of people employed by Wal-mart in 2007
 the weight in tons of the average iceberg
 the pounds of bacon that Burger King restaurants prepare each year for their breakfast customers
+
+the number of couples in the United States that live together but are not married
