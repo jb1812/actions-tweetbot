@@ -1,5 +1,3 @@
 
 the number of different inhabited planets in the the Galactic Empire
 the number of different colors that can be generated using the hex code system in HTML
-the number of turkeys Americans eat at Thanksgiving annually
-the number of couples in the United States that live together but are not married
