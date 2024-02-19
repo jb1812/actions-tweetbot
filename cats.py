@@ -33,18 +33,18 @@ while i == 0:
     f.write(data)
     f.close()
            
-    with open('B.txt','r+') as file2:
+    with open('cats.txt','r+') as file2:
         
         file2r = file2.read()
-        B = file2r.split("\n")
+        cats = file2r.split("\n")
         
-        if fact['fact'] not in B:
+        if fact['fact'] not in cats:
             
-            B.append(fact['fact'])
-            B = listtostring(B)
+            cats.append(fact['fact'])
+            cats = listtostring(cats)
             file2.truncate(0)
             file2.seek(0)
-            file2.write(B)
+            file2.write(cats)
             
             txt2 = f"{fact['fact']}\n\n#Cat_Facts #CatsOfTwitter"
             
