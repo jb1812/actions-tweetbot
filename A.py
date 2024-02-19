@@ -35,18 +35,18 @@ while i == 0:
     api_response = json.loads(response.text)
     response_list = list(api_response.values())
 
-    with open('A.txt','r+') as file1:
+    with open('numbers.txt','r+') as file1:
         
         file1r = file1.read()
-        A = file1r.split("\n")
+        numbers = file1r.split("\n")
         
-        if response_list[0] not in A:
+        if response_list[0] not in numbers:
             
-            A.append(response_list[0])
-            A = listtostring(A)
+            numbers.append(response_list[0])
+            numbers = listtostring(numbers)
             file1.truncate(0)
             file1.seek(0)
-            file1.write(A)
+            file1.write(numbers)
             
             num = format(int(response_list[1]), ',d')
             cap = response_list[0][0].upper() + response_list[0][1:]
