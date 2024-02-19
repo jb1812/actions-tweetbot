@@ -49,8 +49,8 @@ while i == 0:
             file1.write(A)
             num = format(int(response_list[1]), ',d')
             
-            txt1 = f"number : {num}\n\n{response_list[0]}.\n\n#Number_Facts #Maths #Fun_Fact"
-
+            txtt = f"number : {num}\n\n{response_list[0]}.\n\n#Number_Facts #Maths #Fun_Fact"
+			txt1 = txtt[0].upper + txtt[1:]
             client.create_tweet(text=txt1)
             
             i = 1
