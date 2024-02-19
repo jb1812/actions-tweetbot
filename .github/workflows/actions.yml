@@ -30,6 +30,7 @@ jobs:
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY}}
         run: python A.py
 
       - name: execute py script # run B.py
