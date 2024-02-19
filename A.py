@@ -50,7 +50,7 @@ while i == 0:
             
             num = format(int(response_list[1]), ',d')
             cap = response_list[0][0].upper() + response_list[0][1:]
-            txt1 = f"number : {num}\n\n{cap}.\n\n#Number_Facts #Maths #Fun_Fact"
+            txt1 = f"Number : {num}\n\n{cap}.\n\n#Number_Facts #Maths #Fun_Fact"
 
             client.create_tweet(text=txt1)
             
