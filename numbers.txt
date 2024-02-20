@@ -32,3 +32,4 @@ the number of thunderstorms that occur in the USA every year, of which 10% are c
 the number of other neurons each neuron is connected to in the human brain
 the number of morphine addicts the Civil War produced
 the number of distinct Chinese characters
+the average number of hairs that people with black hair have
