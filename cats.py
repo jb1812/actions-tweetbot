@@ -29,7 +29,7 @@ while i == 0:
     fact = requests.get("https://catfact.ninja/fact?max_length=280").json()
     img = requests.get("https://api.sefinek.net/api/v2/random/animal/cat").json()
     data = requests.get(img['message']).content
-    f = open('media.jpg','wb') 
+    f = open('cats.jpg','wb') 
     f.write(data)
     f.close()
            
@@ -48,7 +48,7 @@ while i == 0:
             
             txt2 = f"{fact['fact']}\n\n#Cat_Facts #CatsOfTwitter"
             
-            media = api.media_upload(filename='media.jpg')
+            cats = api.media_upload(filename='cats.jpg')
             media_id = media.media_id
             
             client.create_tweet(text=txt2, media_ids=[media_id])
