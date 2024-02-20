@@ -35,3 +35,4 @@ the number of distinct Chinese characters
 the average number of hairs that people with black hair have
 tons of chocolate produced in Belgium in a year
 the number of toilet related accidents in the United States in 1996
+the number of lakes in Finland, which is also known as "the land of of the thousand lakes"
