@@ -49,7 +49,7 @@ while i == 0:
             txt2 = f"{fact['fact']}\n\n#Cat_Facts #CatsOfTwitter"
             
             cats = api.media_upload(filename='cats.jpg')
-            media_id = media.media_id
+            media_id = cats.media_id
             
             client.create_tweet(text=txt2, media_ids=[media_id])
             i = 1
