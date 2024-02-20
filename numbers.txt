@@ -17,3 +17,4 @@ the number of entries in the freedb database of CD track listings as of June 200
 the cost in dollars to make the movie "Cleopatra" in 1963
 the number of colors that can be distinguished by the trichromatic color vision of the human eye
 the number of entries on Wikipedia in the English language
+the number of words in War and Peace by Leo Tolstoy
