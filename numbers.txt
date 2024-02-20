@@ -29,3 +29,4 @@ the number of people buried in Père Lachaise Cemetery, the most visited cemetary
 the number of words in James Joyce's Ulysses
 the number of tons of dog excrement dumped annually on the streets of Paris
 the number of thunderstorms that occur in the USA every year, of which 10% are classified as severe
+the number of other neurons each neuron is connected to in the human brain
