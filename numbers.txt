@@ -22,3 +22,4 @@ the number of gambling slots in Nevada in 1999, which was one slot for every 10 
 the length in km of bicycle lanes with special bicycle traffic lights in the Netherlands
 the number of people employed by the Indian railway system in India
 the number of jews killed in the Holocaust
+the number of words in the King James Version of the Bible
