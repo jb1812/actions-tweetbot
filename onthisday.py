@@ -26,7 +26,6 @@ i = 0
 while i <= len(a)-1:
     
     txt3 = 'Day: {} {}\n\nOn this day in the year {}, {}\n\n#OnThisDay #History'.format(date.strftime("%d"), date.strftime("%B"), a[i]['year'], a[i]['event'])
-    print(txt3)
     client.create_tweet(text=txt3)
     time.sleep(1200)
     i = i + 1
