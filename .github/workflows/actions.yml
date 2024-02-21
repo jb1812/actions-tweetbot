@@ -3,8 +3,8 @@ name: create tweet
 on:
   schedule:
     - cron: '30 3 * * *' # Every dat at 9am
-    - cron: '30 3-20 * * *' # Every 30 minutes past hour between 9am to 2am(+1)
-    - cron: '45 3-20 * * *' # Every 45 minutes past hour between 9am to 2am(+1)
+    - cron: '30 3-19 * * *' # Every 30 minutes past hour between 9am to 1am(+1)
+    - cron: '45 3-19 * * *' # Every 45 minutes past hour between 9am to 1am(+1)
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
         run: python onthisday.py    
           
       - name: execute py script # run numbers.py
-        if: contains(github.event.schedule, '30 3-20 * * *')
+        if: contains(github.event.schedule, '30 3-19 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
@@ -44,7 +44,7 @@ jobs:
         run: python numbers.py
 
       - name: execute py script # run cats.py
-        if: contains(github.event.schedule, '45 3-20 * * *')
+        if: contains(github.event.schedule, '45 3-19 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
