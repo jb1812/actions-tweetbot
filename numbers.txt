@@ -42,3 +42,4 @@ the number of drivers that fall asleep while driving each day in the US, accordi
 the average number of hairs that redheads have
 the number of average strands of hair in the human head
 the number of gowns Queen Elizabeth I of England owned when she died
+the number of km in length the greatest mountain range extends from (Arctic Ocean to the Atlantic Ocean)
