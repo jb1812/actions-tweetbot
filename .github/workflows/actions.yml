@@ -31,6 +31,7 @@ jobs:
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          NINJA_API_KEY: ${{ secrets.NINJA_API_KEY }}
         run: python onthisday.py    
           
       - name: execute py script # run numbers.py
