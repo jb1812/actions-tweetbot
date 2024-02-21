@@ -2,8 +2,9 @@ name: create tweet
 
 on:
   schedule:
-    - cron: '30 0-22 * * *' # Every 30 minutes past hour between 6am to 4am(+1)
-    - cron: '45 0-22 * * *' # Every 45 minutes past hour between 6am to 4am(+1)
+    - cron: '30 3 * * *' # Every dat at 9am
+    - cron: '30 3-20 * * *' # Every 30 minutes past hour between 9am to 2am(+1)
+    - cron: '45 3-20 * * *' # Every 45 minutes past hour between 9am to 2am(+1)
 
 jobs:
   build:
@@ -22,6 +23,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: execute py script # run onthisday.py
+        if: contains(github.event.schedule, '30 0 * * *')
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        run: python onthisday.py    
           
       - name: execute py script # run numbers.py
         if: contains(github.event.schedule, '30 0-22 * * *')
