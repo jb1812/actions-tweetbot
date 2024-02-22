@@ -29,24 +29,26 @@ headers = {
 i=0
 while i == 0:
     
-    num = random.randint(0,50000000)
-    url = f"https://numbersapi.p.rapidapi.com/{num}/trivia"
-    response = requests.get(url, headers=headers, params=querystring)
-    api_response = json.loads(response.text)
-    response_list = list(api_response.values())
+    num = random.randint(0,100000000)
 
-    with open('numbers.txt','r+') as file1:
+    with open('number.txt','r+') as file1:
         
         file1r = file1.read()
-        numbers = file1r.split("\n")
+        number = file1r.split("\n")
         
-        if response_list[0] not in numbers:
-            
-            numbers.append(response_list[0])
-            numbers = listtostring(numbers)
+        if num not in number:
+
+            num = str(num)
+            number.append(num)
+            number = listtostring(number)
             file1.truncate(0)
             file1.seek(0)
-            file1.write(numbers)
+            file1.write(number)
+
+            url = f"https://numbersapi.p.rapidapi.com/{num}/trivia"
+            response = requests.get(url, headers=headers, params=querystring)
+            api_response = json.loads(response.text)
+            response_list = list(api_response.values())
             
             num = format(int(response_list[1]), ',d')
             cap = response_list[0][0].upper() + response_list[0][1:]
