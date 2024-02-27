@@ -58,4 +58,4 @@ while i == 0:
             
             i = 1
         else:
-            i = i
+            i = 0
