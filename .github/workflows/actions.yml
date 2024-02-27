@@ -33,7 +33,7 @@ jobs:
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: python onthisday.py    
           
-      - name: execute py script # run numbers.py
+      - name: execute py script # run number.py
         if: contains(github.event.schedule, '30 3-19 * * *')
         env:
           API_KEY: ${{ secrets.API_KEY }}
@@ -41,7 +41,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY}}
-        run: python numbers.py
+        run: python number.py
 
       - name: execute py script # run cats.py
         if: contains(github.event.schedule, '45 3-19 * * *')
