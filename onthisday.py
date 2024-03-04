@@ -1,7 +1,6 @@
 import tweepy
 import requests
 import datetime
-import time
 import os
 
 # authenticate twitter account
@@ -29,5 +28,4 @@ while i <= len(a)-1:
     print(a[i])
     txt3 = 'Day: {} {}\n\nOn this day in the year {}, {}\n\n#OnThisDay #History'.format(date.strftime("%d"), date.strftime("%B"), a[i]['year'], a[i]['event'])
     client.create_tweet(text=txt3)
-    time.sleep(1253)
     i = i + 1
